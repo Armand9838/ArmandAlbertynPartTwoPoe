@@ -1,0 +1,52 @@
+﻿@page
+@model ArmandAlbertynPartOnePoe.Pages.DonationPage.DonateModel
+@{
+}
+
+<body style="background-color:mediumpurple"> </body>
+<br />
+<style>
+    .btn {
+        background-color: #eb520c;
+    }
+    .btn-danger {
+        background-color: #eb520c;
+    }
+    .btn-primary {
+        background-color: #eb520c;
+    }
+    .btn-sm {
+        background-color: #eb520c;
+    }
+</style>
+<h2>List Of Donations</h2>
+<a class='btn btn-primary btn-sm' href='/DonationPage/Create'>New Donation</a>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Description</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var items in Model.ListDonate)
+            {
+                <tr>
+                    <td>@items.DonationID</td>
+                    <td>@items.DonateDate</td>
+                    <td>@items.DonateAmount</td>
+                    <td>@items.DonateCategory</td>
+                    <td>@items.DonateDescription</td>
+
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/Donating/Edit?id=@items.DonationID">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/Donating/Delete?id=@items.DonationID">Delete</a>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>

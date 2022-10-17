@@ -1,0 +1,48 @@
+﻿@page
+@model ArmandAlbertynPartOnePoe.Pages.Account.UloginModel
+@{
+}
+
+<body style="background-color:mediumpurple"></body>
+    <style>
+        .btn {
+            background-color: #eb520c;
+        }
+
+        .btn-primary {
+            background-color: #eb520c;
+        }
+    </style>
+    <div class=" container border" style="padding:20px">
+        <form method="post">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class=" form-group row">
+                <div class="col-2">
+                    <label asp-for="credentials.UserName"></label>
+                </div>
+                <div class="col-5">
+                    <input type="text" asp-for="credentials.UserName" class="form-control" />
+                </div>
+                <span class="text-danger" asp-validation-for="credentials.UserName"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="credentials.Password"></label>
+                </div>
+                <div class="col-5">
+                    <input type="password" asp-for="credentials.Password" class="form-control" />
+                </div>
+                <span class="text-danger" asp-validation-for="credentials.Password"></span>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-2">
+                    <input type="submit" class="btn btn-primary" value="Login" />
+                </div>
+                <div class="col-5">
+
+                </div>
+            </div>
+        </form>
+
+    </div>

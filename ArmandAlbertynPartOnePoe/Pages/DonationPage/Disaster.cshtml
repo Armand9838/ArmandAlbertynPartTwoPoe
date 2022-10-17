@@ -1,0 +1,55 @@
+﻿@page
+@model ArmandAlbertynPartOnePoe.Pages.DonationPage.DisasterModel
+@{
+}
+
+<body style="background-color:mediumpurple">
+</body>
+<style>
+    .btn {
+        background-color: #eb520c;
+    }
+    .btn-danger {
+        background-color: #eb520c;
+    }
+    .btn-primary {
+        background-color: #eb520c;
+    }
+    .btn-sm {
+        background-color: #eb520c;
+    }
+</style>
+<br />
+<h2>New Disaster</h2>
+<a class='btn btn-primary btn-sm' href='/DonationPage/CreateD'>New Disaster</a>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Aid</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model.ListDisaster)
+        {
+            <tr>
+                <td>@items.DisasterID</td>
+                <td>@items.DisasterStart</td>
+                <td>@items.DisasterEnd</td>
+                <td>@items.DisasterLocation</td>
+                <td>@items.DisasterDescription</td>
+                <td>@items.DisasterAid</td>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Donating/Edit?id=@items.DisasterID">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Donating/Delete?id=@items.DisasterID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
